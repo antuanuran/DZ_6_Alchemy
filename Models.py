@@ -48,7 +48,7 @@ class Stock (BaseModel):
     bind_shop = relationship(Shop)
 
     def __str__(self):
-        return f'{self.id}'
+        return f'{self.id_shop}'
 
 
 
@@ -64,7 +64,7 @@ class Sale (BaseModel):
     bind_stock = relationship(Stock)
 
     def __str__(self):
-        return f'{self.price}'
+        return f'{self.id_stock} | {self.price} | {self.date_sale} | {self.count}'
 
 
 

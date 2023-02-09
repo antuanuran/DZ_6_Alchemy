@@ -70,7 +70,7 @@ sess.commit()
 # Запросы
 
 # 1/Запрос
-question1 = input("Введите название Писателя:")
+question1 = input("Введите  Писателя:")
 print(f'\nВсе книги писателя по фамилии {question1}:')
 for a in sess.query(Book).join(Publisher).filter(Publisher.name == question1):
     print(a)
@@ -82,10 +82,21 @@ for b in sess.query(Book).join(Publisher).join(Stock).join(Shop).filter(Shop.nam
     print(b)
 
 # 3/Запрос
-question3 = input("\nВведите название Писателя:")
+question3 = input("\nВведите  Писателя:")
 print(f'\nВсе покупки книг, написанные писателем: {question3}:')
 for c in sess.query(Sale).join(Stock).join(Book).join(Publisher).filter(Publisher.name == question3):
-    print(f'{c.count} | {c.price}')
+    print(c)
+
+# 4/Запрос
+question3 = input("\nВведите  Писателя:")
+print(f'\nВсе магазины, где продаются книги писателя: {question3}:')
+for d in sess.query(Shop).join(Stock).join(Sale).join(Book).join(Publisher).filter(Publisher.name == question3):
+    print(d)
+
+
+
+
+
 
 
 
