@@ -96,26 +96,6 @@ for c in sess.query(Sale).join(Stock).join(Book).join(Publisher).filter(Publishe
 
 
 
-# print('\nКнига конкретная:')
-# for b in sess.query(Book).filter(Book.title == 'Узник'):
-#     print(b)
-#
-# print('\nКниги по Автору:')
-# for b in sess.query(Book).join(Publisher).filter(Publisher.name == 'Толстой'):
-#     print(b)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
